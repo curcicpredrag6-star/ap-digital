@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta
   name="description"
-  content="AP Digital — marketing strategy, websites and client acquisition systems for growing service businesses."
+  content="AP Digital — marketing strategy, high-converting websites and client acquisition systems for growing service businesses."
 >
 
 <meta name="theme-color" content="#050505">
 
-<title>
-AP Digital — More Enquiries. More Bookings. Better Growth.
-</title>
+<title>AP Digital — More Enquiries. More Bookings. Better Growth.</title>
 
 <style>
 
 /* =========================================================
-   AP DIGITAL
-   MASTER ONE-FILE WEBSITE
-   Responsive • Mobile Menu • Founders • GitHub Pages Safe
+   ROOT
 ========================================================= */
 
 :root {
-
   --bg: #050505;
   --bg-soft: #0b0b0c;
-
   --card: #101011;
   --card-2: #151516;
 
@@ -41,10 +33,10 @@ AP Digital — More Enquiries. More Bookings. Better Growth.
   --muted: #707073;
 
   --line: rgba(255,255,255,.09);
+  --line-soft: rgba(255,255,255,.055);
 
   --max: 1180px;
 }
-
 
 /* =========================================================
    RESET
@@ -58,13 +50,11 @@ AP Digital — More Enquiries. More Bookings. Better Growth.
 
 html {
   scroll-behavior: smooth;
-  background: var(--bg);
+  scroll-padding-top: 90px;
 }
 
 body {
-
   background: var(--bg);
-
   color: var(--white);
 
   font-family:
@@ -76,7 +66,6 @@ body {
     sans-serif;
 
   overflow-x: hidden;
-
   line-height: 1.5;
 }
 
@@ -95,171 +84,151 @@ a {
 }
 
 button {
-  font-family: inherit;
+  font: inherit;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
 
 /* =========================================================
-   GLOBAL CONTAINER
+   GLOBAL
 ========================================================= */
 
 .container {
-
-  width: min(
-    calc(100% - 40px),
-    var(--max)
-  );
-
+  width: min(100% - 40px, var(--max));
   margin: 0 auto;
 }
 
+.gold {
+  color: var(--gold);
+}
+
+.section {
+  padding: 130px 0;
+}
+
+.section-dark {
+  background: var(--bg-soft);
+}
+
+.section-header {
+  max-width: 760px;
+  margin-bottom: 70px;
+}
+
+.section-label {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 18px;
+}
+
+.section h2 {
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: .98;
+  letter-spacing: -3px;
+  font-weight: 600;
+}
+
+.section-header p {
+  color: #858589;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-top: 24px;
+}
 
 /* =========================================================
    NAVIGATION
 ========================================================= */
 
 .nav {
-
   position: fixed;
-
   top: 0;
   left: 0;
-
   width: 100%;
 
   z-index: 1000;
 
-  background:
-    rgba(5,5,5,.78);
+  background: rgba(5,5,5,.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
-  backdrop-filter:
-    blur(18px);
-
-  -webkit-backdrop-filter:
-    blur(18px);
-
-  border-bottom:
-    1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.06);
 }
 
-
 .nav-inner {
-
   height: 76px;
 
-  width:
-    min(
-      calc(100% - 40px),
-      var(--max)
-    );
-
+  width: min(100% - 40px, var(--max));
   margin: auto;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 }
 
-
-/* =========================================================
-   LOGO
-========================================================= */
-
 .logo {
-
   display: flex;
-
   align-items: center;
-
   gap: 12px;
+
+  flex-shrink: 0;
 }
 
 .logo-mark {
-
   color: var(--gold);
-
   font-size: 25px;
-
   font-weight: 300;
-
   letter-spacing: -5px;
-
   line-height: 1;
 }
 
 .logo-text {
-
   display: flex;
-
   flex-direction: column;
 }
 
 .logo-text strong {
-
   font-size: 11px;
-
   letter-spacing: 5px;
-
   font-weight: 600;
 }
 
 .logo-text span {
-
   color: #6e6e70;
-
   font-size: 7px;
-
   letter-spacing: 3px;
-
   margin-top: 2px;
 }
 
-
-/* =========================================================
-   DESKTOP NAV
-========================================================= */
-
 .nav-links {
-
   display: flex;
-
   align-items: center;
-
   gap: 34px;
 }
 
 .nav-links a {
-
   color: #969699;
-
   font-size: 12px;
 
   transition:
-    color .2s ease;
+    color .2s ease,
+    transform .2s ease;
 }
 
 .nav-links a:hover {
-
   color: white;
 }
 
-
-/* =========================================================
-   NAV CTA
-========================================================= */
-
 .nav-cta {
-
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
   height: 42px;
-
   padding: 0 19px;
 
   border-radius: 8px;
@@ -274,145 +243,164 @@ button {
   color: #050505 !important;
 
   font-size: 10px !important;
-
   font-weight: 800;
-
   letter-spacing: 1px;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
 }
 
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(228,189,56,.18);
+}
 
-/* =========================================================
-   MOBILE MENU BUTTON
-========================================================= */
+/* MOBILE BUTTON */
 
 .mobile-menu {
-
   display: none;
 
   width: 44px;
-
   height: 44px;
 
-  border: 0;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
 
-  background: transparent;
+  background: rgba(255,255,255,.025);
 
   color: white;
 
   cursor: pointer;
 
   align-items: center;
-
   justify-content: center;
 
-  font-size: 28px;
+  position: relative;
 
-  line-height: 1;
-
-  padding: 0;
+  z-index: 1100;
 }
 
+.mobile-menu-lines {
+  width: 19px;
+  height: 15px;
 
-/* =========================================================
-   MOBILE MENU PANEL
-========================================================= */
+  position: relative;
+}
 
-.mobile-nav {
-
-  position: fixed;
-
-  top: 76px;
+.mobile-menu-lines span {
+  position: absolute;
 
   left: 0;
 
   width: 100%;
+  height: 1.5px;
 
-  z-index: 999;
+  background: white;
+
+  transition:
+    transform .25s ease,
+    top .25s ease,
+    opacity .25s ease;
+}
+
+.mobile-menu-lines span:nth-child(1) {
+  top: 0;
+}
+
+.mobile-menu-lines span:nth-child(2) {
+  top: 6.5px;
+}
+
+.mobile-menu-lines span:nth-child(3) {
+  top: 13px;
+}
+
+.mobile-menu.active
+.mobile-menu-lines span:nth-child(1) {
+  top: 6.5px;
+  transform: rotate(45deg);
+}
+
+.mobile-menu.active
+.mobile-menu-lines span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu.active
+.mobile-menu-lines span:nth-child(3) {
+  top: 6.5px;
+  transform: rotate(-45deg);
+}
+
+/* MOBILE NAV */
+
+.mobile-nav {
+  display: none;
+
+  position: fixed;
+
+  top: 76px;
+  left: 0;
+
+  width: 100%;
 
   background:
     rgba(5,5,5,.97);
 
-  backdrop-filter:
-    blur(22px);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
 
-  -webkit-backdrop-filter:
-    blur(22px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
 
-  border-bottom:
-    1px solid rgba(255,255,255,.08);
+  padding: 25px 20px 30px;
 
+  z-index: 999;
+
+  transform: translateY(-12px);
   opacity: 0;
-
-  visibility: hidden;
-
-  transform:
-    translateY(-12px);
+  pointer-events: none;
 
   transition:
-    opacity .25s ease,
-    visibility .25s ease,
-    transform .25s ease;
+    transform .25s ease,
+    opacity .25s ease;
 }
 
-.mobile-nav.open {
-
+.mobile-nav.active {
+  transform: translateY(0);
   opacity: 1;
-
-  visibility: visible;
-
-  transform:
-    translateY(0);
+  pointer-events: auto;
 }
 
 .mobile-nav-inner {
+  width: min(100%, 700px);
+  margin: auto;
 
-  width:
-    min(
-      calc(100% - 32px),
-      700px
-    );
-
-  margin: 0 auto;
-
-  padding: 12px 0 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 .mobile-nav a {
-
-  display: block;
-
   padding: 17px 4px;
 
-  color: #a9a9ad;
+  color: #aaa;
 
-  font-size: 15px;
+  font-size: 14px;
 
-  border-bottom:
-    1px solid rgba(255,255,255,.06);
-
-  transition:
-    color .2s ease,
-    padding-left .2s ease;
+  border-bottom: 1px solid var(--line-soft);
 }
 
-.mobile-nav a:hover {
-
-  color: white;
-
-  padding-left: 9px;
+.mobile-nav a:last-child {
+  border-bottom: none;
 }
 
-.mobile-nav .mobile-nav-cta {
-
-  margin-top: 14px;
-
-  border: 0;
-
-  border-radius: 9px;
+.mobile-nav .mobile-cta {
+  margin-top: 16px;
 
   text-align: center;
 
-  color: #050505;
+  border: none;
+  border-radius: 10px;
 
   background:
     linear-gradient(
@@ -421,42 +409,34 @@ button {
       var(--gold-light)
     );
 
-  font-weight: 800;
+  color: #050505;
 
+  font-weight: 800;
   letter-spacing: 1px;
 }
-
 
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero {
-
   min-height: 100vh;
 
-  padding:
-    150px
-    0
-    90px;
+  padding: 150px 0 90px;
 
   position: relative;
-
   overflow: hidden;
 }
 
 .hero::before {
-
   content: "";
 
   position: absolute;
 
   width: 700px;
-
   height: 700px;
 
   right: -300px;
-
   top: 80px;
 
   background:
@@ -470,9 +450,7 @@ button {
 }
 
 .hero-grid {
-
-  min-height:
-    calc(100vh - 240px);
+  min-height: calc(100vh - 240px);
 
   display: grid;
 
@@ -484,57 +462,34 @@ button {
   gap: 70px;
 }
 
-
-/* =========================================================
-   HERO EYEBROW
-========================================================= */
-
 .eyebrow {
-
   display: inline-flex;
-
   align-items: center;
-
   gap: 10px;
 
   color: var(--gold);
 
   font-size: 10px;
-
   font-weight: 700;
-
   letter-spacing: 4px;
 
   margin-bottom: 26px;
 }
 
 .eyebrow::before {
-
   content: "";
 
   width: 40px;
-
   height: 1px;
 
-  background:
-    var(--gold);
+  background: var(--gold);
 }
 
-
-/* =========================================================
-   HERO TITLE
-========================================================= */
-
 .hero h1 {
-
   max-width: 720px;
 
   font-size:
-    clamp(
-      54px,
-      6.2vw,
-      92px
-    );
+    clamp(54px, 6.2vw, 92px);
 
   line-height: .94;
 
@@ -544,22 +499,10 @@ button {
 }
 
 .hero h1 span {
-
   display: block;
 }
 
-.gold {
-
-  color: var(--gold);
-}
-
-
-/* =========================================================
-   HERO COPY
-========================================================= */
-
 .hero-copy {
-
   max-width: 570px;
 
   color: #9b9b9e;
@@ -571,28 +514,17 @@ button {
   margin-top: 30px;
 }
 
-
-/* =========================================================
-   HERO ACTIONS
-========================================================= */
-
 .hero-actions {
-
   display: flex;
-
   align-items: center;
-
   gap: 16px;
 
   margin-top: 34px;
 }
 
 .primary-btn {
-
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
   gap: 25px;
@@ -613,14 +545,11 @@ button {
   color: #050505;
 
   font-size: 11px;
-
   font-weight: 800;
-
   letter-spacing: 1.4px;
 
   box-shadow:
-    0 20px 60px
-    rgba(228,189,56,.12);
+    0 20px 60px rgba(228,189,56,.12);
 
   transition:
     transform .25s ease,
@@ -628,40 +557,33 @@ button {
 }
 
 .primary-btn:hover {
-
-  transform:
-    translateY(-2px);
+  transform: translateY(-2px);
 
   box-shadow:
-    0 25px 70px
-    rgba(228,189,56,.2);
+    0 25px 70px rgba(228,189,56,.2);
 }
 
 .primary-btn span {
-
   font-size: 21px;
-
   font-weight: 400;
 }
 
 .secondary-btn {
-
   color: #858589;
 
   font-size: 12px;
 
   padding: 15px;
+
+  transition: color .2s ease;
 }
 
-
-/* =========================================================
-   HERO TRUST
-========================================================= */
+.secondary-btn:hover {
+  color: white;
+}
 
 .hero-trust {
-
   display: flex;
-
   flex-wrap: wrap;
 
   gap: 22px;
@@ -674,7 +596,6 @@ button {
 }
 
 .hero-trust span::before {
-
   content: "✓";
 
   color: var(--gold);
@@ -682,17 +603,14 @@ button {
   margin-right: 7px;
 }
 
-
 /* =========================================================
    PHONE VISUAL
 ========================================================= */
 
 .visual-wrap {
-
   display: flex;
 
   justify-content: center;
-
   align-items: center;
 
   min-height: 620px;
@@ -701,9 +619,7 @@ button {
 }
 
 .phone {
-
   width: 300px;
-
   height: 610px;
 
   padding: 9px;
@@ -719,14 +635,10 @@ button {
     );
 
   box-shadow:
-    0 50px 100px
-    rgba(0,0,0,.8),
+    0 50px 100px rgba(0,0,0,.8),
+    0 0 100px rgba(228,189,56,.06);
 
-    0 0 100px
-    rgba(228,189,56,.06);
-
-  transform:
-    rotate(5deg);
+  transform: rotate(5deg);
 
   position: relative;
 
@@ -734,13 +646,11 @@ button {
 }
 
 .phone::before {
-
   content: "";
 
   position: absolute;
 
   width: 105px;
-
   height: 27px;
 
   border-radius: 20px;
@@ -748,19 +658,15 @@ button {
   background: #030303;
 
   top: 18px;
-
   left: 50%;
 
-  transform:
-    translateX(-50%);
+  transform: translateX(-50%);
 
   z-index: 5;
 }
 
 .phone-screen {
-
   width: 100%;
-
   height: 100%;
 
   border-radius: 39px;
@@ -775,16 +681,11 @@ button {
       #070708 100%
     );
 
-  padding:
-    52px
-    19px
-    20px;
+  padding: 52px 19px 20px;
 }
 
 .phone-top {
-
   display: flex;
-
   justify-content: space-between;
 
   color: #737478;
@@ -793,7 +694,6 @@ button {
 }
 
 .phone-brand {
-
   margin-top: 35px;
 
   color: var(--gold);
@@ -804,7 +704,6 @@ button {
 }
 
 .phone-subbrand {
-
   color: #5f6064;
 
   font-size: 7px;
@@ -815,12 +714,10 @@ button {
 }
 
 .phone-title {
-
   margin-top: 55px;
 }
 
 .phone-title small {
-
   color: #65666a;
 
   font-size: 7px;
@@ -829,7 +726,6 @@ button {
 }
 
 .phone-title h3 {
-
   margin-top: 6px;
 
   font-size: 28px;
@@ -838,14 +734,12 @@ button {
 }
 
 .phone-stat {
-
   margin-top: 22px;
 
   padding: 15px;
 
   border:
-    1px solid
-    rgba(255,255,255,.06);
+    1px solid rgba(255,255,255,.06);
 
   border-radius: 15px;
 
@@ -854,7 +748,6 @@ button {
 }
 
 .phone-stat small {
-
   color: #66676b;
 
   font-size: 7px;
@@ -863,25 +756,21 @@ button {
 }
 
 .phone-number {
-
   margin-top: 5px;
 
   display: flex;
 
   justify-content: space-between;
-
   align-items: end;
 }
 
 .phone-number strong {
-
   font-size: 32px;
 
   font-weight: 500;
 }
 
 .phone-number span {
-
   color: var(--gold);
 
   font-size: 8px;
@@ -895,14 +784,12 @@ button {
 }
 
 .chart {
-
   height: 120px;
 
   margin-top: 10px;
 
   border:
-    1px solid
-    rgba(255,255,255,.05);
+    1px solid rgba(255,255,255,.05);
 
   border-radius: 15px;
 
@@ -919,14 +806,10 @@ button {
 }
 
 .chart i {
-
   flex: 1;
 
   border-radius:
-    5px
-    5px
-    2px
-    2px;
+    5px 5px 2px 2px;
 
   background:
     linear-gradient(
@@ -936,44 +819,19 @@ button {
     );
 }
 
-.chart i:nth-child(1) {
-  height: 28%;
-}
-
-.chart i:nth-child(2) {
-  height: 40%;
-}
-
-.chart i:nth-child(3) {
-  height: 35%;
-}
-
-.chart i:nth-child(4) {
-  height: 55%;
-}
-
-.chart i:nth-child(5) {
-  height: 48%;
-}
-
-.chart i:nth-child(6) {
-  height: 70%;
-}
-
-.chart i:nth-child(7) {
-  height: 62%;
-}
-
-.chart i:nth-child(8) {
-  height: 88%;
-}
+.chart i:nth-child(1) { height: 28%; }
+.chart i:nth-child(2) { height: 40%; }
+.chart i:nth-child(3) { height: 35%; }
+.chart i:nth-child(4) { height: 55%; }
+.chart i:nth-child(5) { height: 48%; }
+.chart i:nth-child(6) { height: 70%; }
+.chart i:nth-child(7) { height: 62%; }
+.chart i:nth-child(8) { height: 88%; }
 
 .phone-bottom {
-
   display: grid;
 
-  grid-template-columns:
-    1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 
   gap: 9px;
 
@@ -981,7 +839,6 @@ button {
 }
 
 .phone-mini {
-
   padding: 12px;
 
   border-radius: 13px;
@@ -990,12 +847,10 @@ button {
     rgba(255,255,255,.025);
 
   border:
-    1px solid
-    rgba(255,255,255,.05);
+    1px solid rgba(255,255,255,.05);
 }
 
 .phone-mini small {
-
   display: block;
 
   color: #66676b;
@@ -1006,7 +861,6 @@ button {
 }
 
 .phone-mini strong {
-
   display: block;
 
   margin-top: 4px;
@@ -1016,76 +870,11 @@ button {
   font-weight: 500;
 }
 
-
-/* =========================================================
-   GENERAL SECTIONS
-========================================================= */
-
-.section {
-
-  padding:
-    130px
-    0;
-}
-
-.section-dark {
-
-  background:
-    #0b0b0c;
-}
-
-.section-header {
-
-  max-width: 760px;
-
-  margin-bottom: 70px;
-}
-
-.section-label {
-
-  color: var(--gold);
-
-  font-size: 10px;
-
-  font-weight: 700;
-
-  letter-spacing: 4px;
-
-  margin-bottom: 18px;
-}
-
-.section h2 {
-
-  font-size:
-    clamp(
-      42px,
-      5vw,
-      70px
-    );
-
-  line-height: .98;
-
-  letter-spacing: -3px;
-}
-
-.section-header p {
-
-  color: #858589;
-
-  font-size: 17px;
-
-  line-height: 1.7;
-
-  margin-top: 24px;
-}
-
-
 /* =========================================================
    SERVICES
 ========================================================= */
 
 .services-grid {
-
   display: grid;
 
   grid-template-columns:
@@ -1095,14 +884,12 @@ button {
 }
 
 .service-card {
-
   min-height: 360px;
 
   padding: 34px;
 
   border:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
   border-radius: 25px;
 
@@ -1121,30 +908,24 @@ button {
 }
 
 .service-card:hover {
-
-  transform:
-    translateY(-6px);
+  transform: translateY(-6px);
 
   border-color:
     rgba(228,189,56,.35);
 }
 
 .service-number {
-
   width: 48px;
-
   height: 48px;
 
   border-radius: 50%;
 
   border:
-    1px solid
-    rgba(228,189,56,.45);
+    1px solid rgba(228,189,56,.45);
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   color: var(--gold);
@@ -1153,7 +934,6 @@ button {
 }
 
 .service-card h3 {
-
   margin-top: 75px;
 
   font-size: 27px;
@@ -1162,7 +942,6 @@ button {
 }
 
 .service-card p {
-
   margin-top: 15px;
 
   color: #858589;
@@ -1173,14 +952,12 @@ button {
 }
 
 .service-card ul {
-
   list-style: none;
 
   margin-top: 22px;
 }
 
 .service-card li {
-
   color: #b2b2b5;
 
   font-size: 12px;
@@ -1189,7 +966,6 @@ button {
 }
 
 .service-card li::before {
-
   content: "✓";
 
   color: var(--gold);
@@ -1197,45 +973,35 @@ button {
   margin-right: 8px;
 }
 
-
 /* =========================================================
    PROCESS
 ========================================================= */
 
 .process {
-
   display: grid;
 
   grid-template-columns:
     repeat(4,1fr);
 
   border-top:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
   border-bottom:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 }
 
 .process-item {
-
-  padding:
-    45px
-    30px;
+  padding: 45px 30px;
 
   border-right:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 }
 
 .process-item:last-child {
-
   border-right: none;
 }
 
 .process-num {
-
   color: var(--gold);
 
   font-size: 11px;
@@ -1244,7 +1010,6 @@ button {
 }
 
 .process-item h3 {
-
   margin-top: 55px;
 
   font-size: 22px;
@@ -1253,7 +1018,6 @@ button {
 }
 
 .process-item p {
-
   color: #77777b;
 
   font-size: 13px;
@@ -1263,13 +1027,11 @@ button {
   margin-top: 12px;
 }
 
-
 /* =========================================================
    WHO WE HELP
 ========================================================= */
 
 .audience {
-
   display: flex;
 
   flex-wrap: wrap;
@@ -1280,16 +1042,12 @@ button {
 }
 
 .pill {
-
-  padding:
-    13px
-    19px;
+  padding: 13px 19px;
 
   border-radius: 100px;
 
   border:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
   color: #aaa;
 
@@ -1297,27 +1055,9 @@ button {
     rgba(255,255,255,.018);
 
   font-size: 12px;
-
-  transition:
-    border-color .2s ease,
-    color .2s ease;
 }
-
-.pill:hover {
-
-  color: white;
-
-  border-color:
-    rgba(228,189,56,.3);
-}
-
-
-/* =========================================================
-   RESULTS BOX
-========================================================= */
 
 .results-box {
-
   margin-top: 65px;
 
   padding: 45px;
@@ -1325,8 +1065,7 @@ button {
   border-radius: 26px;
 
   border:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
   background:
     linear-gradient(
@@ -1337,14 +1076,12 @@ button {
 }
 
 .results-box h3 {
-
   font-size: 30px;
 
   font-weight: 500;
 }
 
 .results-box p {
-
   max-width: 650px;
 
   color: #858589;
@@ -1355,7 +1092,6 @@ button {
 }
 
 .results-grid {
-
   display: grid;
 
   grid-template-columns:
@@ -1367,16 +1103,13 @@ button {
 }
 
 .result {
-
   padding-top: 25px;
 
   border-top:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 }
 
 .result strong {
-
   display: block;
 
   color: var(--gold);
@@ -1387,56 +1120,52 @@ button {
 }
 
 .result span {
-
   color: #77777b;
 
   font-size: 12px;
 }
 
-
 /* =========================================================
    FOUNDERS
 ========================================================= */
 
-.founders-grid {
+.founders-section {
+  background: #050505;
+}
 
+.founders-intro {
+  max-width: 720px;
+
+  margin-bottom: 65px;
+}
+
+.founders-grid {
   display: grid;
 
   grid-template-columns:
-    repeat(2,1fr);
+    repeat(2, 1fr);
 
-  gap: 20px;
+  gap: 22px;
 }
 
 .founder-card {
-
   position: relative;
 
-  overflow: hidden;
-
-  padding: 42px;
+  padding: 38px;
 
   border:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
   border-radius: 28px;
 
   background:
-
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(228,189,56,.08),
-      transparent 48%
-    ),
-
     linear-gradient(
       145deg,
-      #151516,
-      #0b0b0c
+      rgba(255,255,255,.045),
+      rgba(255,255,255,.012)
     );
 
-  text-align: center;
+  overflow: hidden;
 
   transition:
     transform .3s ease,
@@ -1444,99 +1173,92 @@ button {
 }
 
 .founder-card:hover {
-
-  transform:
-    translateY(-6px);
+  transform: translateY(-6px);
 
   border-color:
-    rgba(228,189,56,.35);
+    rgba(228,189,56,.3);
 }
 
+.founder-image-wrap {
+  width: 185px;
+  height: 185px;
 
-/* =========================================================
-   FOUNDER PHOTO PLACEHOLDER
-========================================================= */
+  margin: 0 auto 30px;
 
-.founder-photo {
+  position: relative;
+}
 
-  width: 155px;
+.founder-image-wrap::after {
+  content: "";
 
-  height: 155px;
+  position: absolute;
 
-  margin:
-    0 auto
-    28px;
+  inset: -8px;
 
   border-radius: 50%;
 
-  overflow: hidden;
+  border:
+    1px solid rgba(228,189,56,.25);
+
+  pointer-events: none;
+}
+
+.founder-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 50%;
 
   border:
-    1px solid
-    rgba(228,189,56,.4);
+    1px solid rgba(255,255,255,.12);
 
-  background:
-
-    radial-gradient(
-      circle at 50% 30%,
-      #303033,
-      #101011 70%
-    );
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  box-shadow:
-    0 20px 50px
-    rgba(0,0,0,.35);
+  background: #000;
 }
-
-.founder-initials {
-
-  color: var(--gold);
-
-  font-size: 34px;
-
-  font-weight: 500;
-
-  letter-spacing: 3px;
-}
-
-
-/* =========================================================
-   FOUNDER ROLE
-========================================================= */
 
 .founder-role {
-
   color: var(--gold);
 
-  font-size: 9px;
+  font-size: 10px;
 
   font-weight: 700;
 
-  letter-spacing: 2.8px;
+  letter-spacing: 4px;
+
+  text-align: center;
 }
 
-.founder-card h3 {
+.founder-title {
+  margin-top: 10px;
 
-  margin-top: 13px;
+  text-align: center;
 
-  font-size: 28px;
+  color: #858589;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.founder-name {
+  margin-top: 12px;
+
+  text-align: center;
+
+  font-size: 27px;
 
   font-weight: 500;
 }
 
-.founder-description {
+.founder-copy {
+  max-width: 430px;
 
-  max-width: 450px;
+  margin: 18px auto 0;
 
-  margin:
-    16px auto
-    0;
+  text-align: center;
 
   color: #858589;
 
@@ -1545,36 +1267,20 @@ button {
   line-height: 1.75;
 }
 
-.founder-tag {
+.founder-line {
+  width: 45px;
+  height: 1px;
 
-  display: inline-block;
+  margin: 28px auto 0;
 
-  margin-top: 25px;
-
-  padding:
-    9px
-    14px;
-
-  border-radius: 100px;
-
-  border:
-    1px solid
-    var(--line);
-
-  color: #77777b;
-
-  font-size: 9px;
-
-  letter-spacing: 1.5px;
+  background: var(--gold);
 }
-
 
 /* =========================================================
    CASE STUDY
 ========================================================= */
 
 .case {
-
   display: grid;
 
   grid-template-columns:
@@ -1586,7 +1292,6 @@ button {
 }
 
 .case-tag {
-
   color: var(--gold);
 
   font-size: 10px;
@@ -1595,12 +1300,10 @@ button {
 }
 
 .case h2 {
-
   margin-top: 18px;
 }
 
 .case-copy {
-
   color: #88888c;
 
   line-height: 1.8;
@@ -1609,21 +1312,17 @@ button {
 }
 
 .case-card {
-
   padding: 40px;
 
   border:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
   border-radius: 28px;
 
-  background:
-    #0c0c0d;
+  background: #0c0c0d;
 }
 
 .case-card-top {
-
   display: flex;
 
   justify-content: space-between;
@@ -1632,7 +1331,6 @@ button {
 }
 
 .case-card-top span {
-
   color: var(--gold);
 
   font-size: 10px;
@@ -1641,24 +1339,19 @@ button {
 }
 
 .example {
-
   color: #66666a;
 
   font-size: 9px;
 
   border:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
-  padding:
-    5px
-    8px;
+  padding: 5px 8px;
 
   border-radius: 20px;
 }
 
 .case-card h3 {
-
   margin-top: 25px;
 
   font-size: 35px;
@@ -1667,7 +1360,6 @@ button {
 }
 
 .case-stats {
-
   display: grid;
 
   grid-template-columns:
@@ -1679,7 +1371,6 @@ button {
 }
 
 .case-stat strong {
-
   display: block;
 
   color: var(--gold);
@@ -1690,37 +1381,30 @@ button {
 }
 
 .case-stat span {
-
   color: #77777b;
 
   font-size: 12px;
 }
 
 .case-note {
-
   margin-top: 35px;
 
   padding-top: 22px;
 
   border-top:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
   color: #6d6d71;
 
   font-size: 12px;
 }
 
-
 /* =========================================================
    CTA
 ========================================================= */
 
 .cta {
-
-  padding:
-    150px
-    0;
+  padding: 150px 0;
 
   text-align: center;
 
@@ -1730,24 +1414,18 @@ button {
 }
 
 .cta::before {
-
   content: "";
 
   position: absolute;
 
   width: 600px;
-
   height: 600px;
 
   left: 50%;
-
   top: 50%;
 
   transform:
-    translate(
-      -50%,
-      -50%
-    );
+    translate(-50%,-50%);
 
   background:
     radial-gradient(
@@ -1758,24 +1436,18 @@ button {
 }
 
 .cta-inner {
-
   position: relative;
 
   z-index: 1;
 }
 
 .cta h2 {
-
   max-width: 850px;
 
   margin: auto;
 
   font-size:
-    clamp(
-      45px,
-      6vw,
-      80px
-    );
+    clamp(45px,6vw,80px);
 
   line-height: .98;
 
@@ -1783,13 +1455,10 @@ button {
 }
 
 .cta p {
-
   max-width: 580px;
 
   margin:
-    25px
-    auto
-    35px;
+    25px auto 35px;
 
   color: #858589;
 
@@ -1797,28 +1466,21 @@ button {
 }
 
 .cta .primary-btn {
-
   min-width: 260px;
 }
-
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 footer {
-
-  padding:
-    35px
-    0;
+  padding: 35px 0;
 
   border-top:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 }
 
 .footer-inner {
-
   display: flex;
 
   justify-content: space-between;
@@ -1827,80 +1489,64 @@ footer {
 }
 
 .footer-copy {
-
   color: #555559;
 
   font-size: 10px;
 }
 
 .footer-links {
-
   display: flex;
 
   gap: 20px;
 }
 
 .footer-links a {
-
   color: #77777b;
 
   font-size: 10px;
+
+  transition: color .2s ease;
 }
 
 .footer-links a:hover {
-
   color: white;
 }
 
-
 /* =========================================================
-   TABLET / MOBILE
+   RESPONSIVE — TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
 
   .container {
-
     width:
-      min(
-        calc(100% - 32px),
-        700px
-      );
+      min(100% - 32px, 700px);
   }
-
 
   .nav-inner {
-
     width:
-      min(
-        calc(100% - 32px),
-        700px
-      );
+      min(100% - 32px, 700px);
   }
 
-
   .nav-links {
-
     display: none;
   }
 
-
   .mobile-menu {
-
     display: flex;
   }
 
+  .nav-cta {
+    display: none;
+  }
 
   .hero {
-
     padding-top: 125px;
 
     padding-bottom: 70px;
   }
 
-
   .hero-grid {
-
     grid-template-columns: 1fr;
 
     gap: 55px;
@@ -1908,469 +1554,274 @@ footer {
     text-align: center;
   }
 
-
   .hero-copy {
-
     margin-left: auto;
-
     margin-right: auto;
 
     font-size: 15px;
   }
 
-
   .eyebrow {
-
     justify-content: center;
   }
 
-
   .hero h1 {
-
     font-size:
-      clamp(
-        45px,
-        12vw,
-        72px
-      );
+      clamp(45px,12vw,72px);
 
     letter-spacing: -3px;
   }
 
-
   .hero-actions {
-
     justify-content: center;
   }
-
 
   .hero-trust {
-
     justify-content: center;
   }
 
-
   .visual-wrap {
-
     min-height: 530px;
   }
 
-
   .phone {
-
     width: 255px;
-
     height: 520px;
   }
 
-
   .services-grid {
-
     grid-template-columns: 1fr;
   }
 
-
   .service-card {
-
     min-height: auto;
   }
 
-
   .service-card h3 {
-
     margin-top: 45px;
   }
 
-
   .process {
-
     grid-template-columns: 1fr;
   }
 
-
   .process-item {
-
     border-right: none;
 
     border-bottom:
-      1px solid
-      var(--line);
+      1px solid var(--line);
   }
 
-
   .process-item:last-child {
-
     border-bottom: none;
   }
 
-
   .process-item h3 {
-
     margin-top: 25px;
   }
 
-
   .founders-grid {
-
     grid-template-columns: 1fr;
   }
 
-
   .case {
-
     grid-template-columns: 1fr;
 
     gap: 40px;
   }
 
-
   .results-grid {
-
     grid-template-columns: 1fr;
   }
 
-
   .results-box {
-
     padding: 30px;
   }
 
-
   .case-card {
-
     padding: 28px;
   }
 
-
   .section {
-
     padding: 95px 0;
   }
 
-
   .section h2 {
-
     letter-spacing: -2px;
   }
 
-
   .footer-inner {
-
     flex-direction: column;
 
     gap: 18px;
   }
-
 }
 
-
 /* =========================================================
-   SMALL MOBILE
+   RESPONSIVE — MOBILE
 ========================================================= */
 
 @media (max-width: 560px) {
 
-  .container {
-
-    width:
-      calc(100% - 28px);
-  }
-
-
-  .nav-inner {
-
-    width:
-      calc(100% - 28px);
-  }
-
-
-  .logo-text strong {
-
-    font-size: 10px;
-
-    letter-spacing: 4px;
-  }
-
-
-  .logo-text span {
-
-    font-size: 6px;
-
-    letter-spacing: 2.5px;
-  }
-
-
   .hero h1 {
-
     font-size:
-      clamp(
-        43px,
-        12vw,
-        58px
-      );
+      clamp(43px,12vw,58px);
 
     letter-spacing: -2.5px;
   }
 
-
   .hero-copy {
-
     font-size: 14px;
   }
 
-
   .hero-actions {
-
     flex-direction: column;
 
     width: 100%;
   }
 
-
   .primary-btn {
-
     width: 100%;
 
     max-width: 330px;
   }
 
-
   .hero-trust {
-
-    gap:
-      10px
-      17px;
+    gap: 10px 17px;
 
     font-size: 9px;
   }
 
-
   .visual-wrap {
-
     min-height: 470px;
   }
 
-
   .phone {
-
     width: 225px;
-
     height: 460px;
 
     border-radius: 37px;
   }
 
-
   .phone-screen {
-
     border-radius: 29px;
 
     padding:
-      43px
-      15px
-      15px;
+      43px 15px 15px;
   }
 
-
   .phone-title {
-
     margin-top: 42px;
   }
 
-
   .phone-title h3 {
-
     font-size: 24px;
   }
 
-
   .phone-stat {
-
     margin-top: 16px;
   }
 
-
   .chart {
-
     height: 90px;
   }
 
-
   .section {
-
     padding: 80px 0;
   }
 
-
   .section h2 {
-
     font-size: 43px;
   }
 
-
   .section-header {
-
     margin-bottom: 45px;
   }
 
-
   .section-header p {
-
     font-size: 14px;
   }
 
-
   .service-card {
-
     padding: 27px;
 
     border-radius: 21px;
   }
 
-
   .service-card h3 {
-
     font-size: 24px;
   }
 
-
   .process-item {
-
-    padding:
-      34px
-      20px;
+    padding: 34px 20px;
   }
 
-
   .audience {
-
     gap: 8px;
   }
 
-
   .pill {
-
-    padding:
-      11px
-      14px;
+    padding: 11px 14px;
 
     font-size: 11px;
   }
 
-
-  .results-box h3 {
-
-    font-size: 25px;
-  }
-
-
   .founder-card {
-
-    padding:
-      30px
-      20px;
-
-    border-radius: 23px;
+    padding: 30px 22px;
   }
 
-
-  .founder-photo {
-
-    width: 125px;
-
-    height: 125px;
-
-    margin-bottom: 24px;
+  .founder-image-wrap {
+    width: 160px;
+    height: 160px;
   }
 
-
-  .founder-initials {
-
-    font-size: 29px;
-  }
-
-
-  .founder-role {
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-  }
-
-
-  .founder-card h3 {
-
+  .founder-name {
     font-size: 24px;
   }
 
-
-  .founder-description {
-
-    font-size: 13px;
-  }
-
-
   .case-stats {
-
     gap: 18px;
   }
 
-
   .case-stat strong {
-
     font-size: 34px;
   }
 
-
   .cta {
-
-    padding:
-      105px
-      0;
+    padding: 105px 0;
   }
 
-
   .cta h2 {
-
     font-size: 46px;
 
     letter-spacing: -2.5px;
   }
 
-
   .cta p {
-
     font-size: 14px;
   }
 
-
   .footer-links {
-
     flex-wrap: wrap;
 
     justify-content: center;
   }
-
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================================================
-     DESKTOP / MAIN NAVIGATION
-========================================================= -->
+<!-- =======================================================
+     DESKTOP / MAIN NAV
+======================================================== -->
 
 <header class="nav">
 
   <div class="nav-inner">
 
-
-    <a href="#top" class="logo">
+    <a href="#top" class="logo" aria-label="AP Digital home">
 
       <div class="logo-mark">
         AP
@@ -2391,7 +1842,7 @@ footer {
     </a>
 
 
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Main navigation">
 
       <a href="#services">
         Services
@@ -2413,42 +1864,43 @@ footer {
         Results
       </a>
 
-      <a
-        href="#contact"
-        class="nav-cta"
-      >
+      <a href="#contact" class="nav-cta">
         BOOK A CALL
       </a>
 
     </nav>
 
 
-    <!-- MOBILE BUTTON -->
+    <!-- MOBILE MENU BUTTON -->
 
     <button
       class="mobile-menu"
-      id="mobileMenuBtn"
-      aria-label="Open menu"
-      aria-expanded="false"
+      id="mobileMenuButton"
       type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
     >
-      ☰
-    </button>
 
+      <span class="mobile-menu-lines">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </span>
+
+    </button>
 
   </div>
 
 </header>
 
 
-<!-- =========================================================
-     MOBILE NAVIGATION
-========================================================= -->
+<!-- =======================================================
+     MOBILE NAV
+======================================================== -->
 
-<div
-  class="mobile-nav"
-  id="mobileNav"
->
+<div class="mobile-nav" id="mobileNav">
 
   <div class="mobile-nav-inner">
 
@@ -2472,11 +1924,8 @@ footer {
       Results
     </a>
 
-    <a
-      href="#contact"
-      class="mobile-nav-cta"
-    >
-      BOOK A FREE CALL
+    <a href="#contact" class="mobile-cta">
+      BOOK A CALL
     </a>
 
   </div>
@@ -2484,29 +1933,26 @@ footer {
 </div>
 
 
-<!-- =========================================================
+<!-- =======================================================
      MAIN
-========================================================= -->
+======================================================== -->
 
 <main id="top">
 
 
-<!-- =========================================================
+<!-- =======================================================
      HERO
-========================================================= -->
+======================================================== -->
 
 <section class="hero">
 
   <div class="container hero-grid">
 
 
-    <!-- HERO COPY -->
-
     <div>
 
-
       <div class="eyebrow">
-        GROWTH PARTNERS
+        AP DIGITAL
       </div>
 
 
@@ -2538,7 +1984,6 @@ footer {
 
       <div class="hero-actions">
 
-
         <a
           href="#contact"
           class="primary-btn"
@@ -2562,7 +2007,6 @@ footer {
 
         </a>
 
-
       </div>
 
 
@@ -2582,17 +2026,14 @@ footer {
 
       </div>
 
-
     </div>
 
 
-    <!-- PHONE VISUAL -->
+    <!-- PHONE -->
 
     <div class="visual-wrap">
 
-
       <div class="phone">
-
 
         <div class="phone-screen">
 
@@ -2616,9 +2057,7 @@ footer {
 
 
           <div class="phone-subbrand">
-
             A P &nbsp; D I G I T A L
-
           </div>
 
 
@@ -2673,7 +2112,6 @@ footer {
 
           <div class="phone-bottom">
 
-
             <div class="phone-mini">
 
               <small>
@@ -2699,27 +2137,22 @@ footer {
 
             </div>
 
-
           </div>
-
 
         </div>
 
-
       </div>
 
-
     </div>
-
 
   </div>
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      SERVICES
-========================================================= -->
+======================================================== -->
 
 <section
   class="section section-dark"
@@ -2731,7 +2164,6 @@ footer {
 
     <div class="section-header">
 
-
       <div class="section-label">
         WHAT WE DO
       </div>
@@ -2740,7 +2172,6 @@ footer {
       <h2>
 
         We don't just build websites.
-
         We build the system behind them.
 
       </h2>
@@ -2754,7 +2185,6 @@ footer {
 
       </p>
 
-
     </div>
 
 
@@ -2762,7 +2192,6 @@ footer {
 
 
       <article class="service-card">
-
 
         <div class="service-number">
           01
@@ -2798,12 +2227,10 @@ footer {
 
         </ul>
 
-
       </article>
 
 
       <article class="service-card">
-
 
         <div class="service-number">
           02
@@ -2839,12 +2266,10 @@ footer {
 
         </ul>
 
-
       </article>
 
 
       <article class="service-card">
-
 
         <div class="service-number">
           03
@@ -2880,21 +2305,19 @@ footer {
 
         </ul>
 
-
       </article>
 
 
     </div>
-
 
   </div>
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      PROCESS
-========================================================= -->
+======================================================== -->
 
 <section
   class="section"
@@ -2906,7 +2329,6 @@ footer {
 
     <div class="section-header">
 
-
       <div class="section-label">
         OUR PROCESS
       </div>
@@ -2915,7 +2337,6 @@ footer {
       <h2>
 
         Simple strategy.
-
         Serious execution.
 
       </h2>
@@ -2927,7 +2348,6 @@ footer {
         creating a clearer path from attention to customer.
 
       </p>
-
 
     </div>
 
@@ -3017,15 +2437,14 @@ footer {
 
     </div>
 
-
   </div>
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      WHO WE HELP
-========================================================= -->
+======================================================== -->
 
 <section
   class="section section-dark"
@@ -3036,7 +2455,6 @@ footer {
 
 
     <div class="section-header">
-
 
       <div class="section-label">
         WHO WE HELP
@@ -3058,7 +2476,6 @@ footer {
         acquisition system.
 
       </p>
-
 
     </div>
 
@@ -3102,7 +2519,6 @@ footer {
 
     <div class="results-box">
 
-
       <h3>
         Simple systems. Real business growth.
       </h3>
@@ -3110,10 +2526,9 @@ footer {
 
       <p>
 
-        We don't focus on vanity metrics.
-        We focus on creating a clear journey from
-        someone discovering your business to becoming
-        a customer.
+        We don't focus on vanity metrics. We focus on
+        creating a clear journey from someone discovering
+        your business to becoming a customer.
 
       </p>
 
@@ -3162,52 +2577,47 @@ footer {
 
       </div>
 
-
     </div>
-
 
   </div>
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      FOUNDERS
-========================================================= -->
+======================================================== -->
 
 <section
-  class="section"
+  class="section founders-section"
   id="founders"
 >
 
   <div class="container">
 
 
-    <div class="section-header">
-
+    <div class="section-header founders-intro">
 
       <div class="section-label">
-        WHO WE ARE
+        THE FOUNDERS
       </div>
 
 
       <h2>
 
-        Two founders.
-
-        One growth system.
+        Strategy and technology,
+        working together.
 
       </h2>
 
 
       <p>
 
-        Marketing and technology working together
-        to help businesses turn attention into
-        real customers.
+        AP Digital brings together technical execution
+        and growth strategy — giving businesses one team
+        responsible for both the system and the results.
 
       </p>
-
 
     </div>
 
@@ -3215,118 +2625,109 @@ footer {
     <div class="founders-grid">
 
 
-      <!-- ===================================================
-           TECH FOUNDER
-      =================================================== -->
+      <!-- TECH FOUNDER -->
 
       <article class="founder-card">
 
 
-        <div class="founder-photo">
+        <div class="founder-image-wrap">
 
-          <div class="founder-initials">
-            TECH
-          </div>
+          <img
+            class="founder-image"
+            src="ap-digital-tech.jpg"
+            alt="AP Digital Co-Founder and Technical Lead"
+          >
 
         </div>
 
 
         <div class="founder-role">
-
-          CO-FOUNDER · TECHNICAL LEAD
-
+          TECH
         </div>
 
 
-        <h3>
+        <div class="founder-title">
+          Co-Founder & Technical Lead
+        </div>
 
+
+        <div class="founder-name">
           Technology & Systems
+        </div>
 
-        </h3>
 
+        <p class="founder-copy">
 
-        <p class="founder-description">
-
-          Building fast websites, reliable digital systems
-          and technology that gives businesses a strong
-          foundation for growth.
+          Building fast websites, reliable systems
+          and practical digital infrastructure that
+          helps businesses operate and grow.
 
         </p>
 
 
-        <span class="founder-tag">
-
-          WEBSITES · SYSTEMS · AUTOMATION
-
-        </span>
-
+        <div class="founder-line"></div>
 
       </article>
 
 
-      <!-- ===================================================
-           MARKETING FOUNDER
-      =================================================== -->
+      <!-- GROWTH FOUNDER -->
 
       <article class="founder-card">
 
 
-        <div class="founder-photo">
+        <div class="founder-image-wrap">
 
-          <div class="founder-initials">
-            STRATEGY
-          </div>
+          <img
+            class="founder-image"
+            src="ap-digital-growth.jpg"
+            alt="AP Digital Co-Founder and Marketing Lead"
+          >
 
         </div>
 
 
         <div class="founder-role">
-
-          CO-FOUNDER · MARKETING & STRATEGY
-
+          GROWTH
         </div>
 
 
-        <h3>
-
-          Marketing & Growth
-
-        </h3>
+        <div class="founder-title">
+          Co-Founder & Marketing Lead
+        </div>
 
 
-        <p class="founder-description">
+        <div class="founder-name">
+          Marketing & Strategy
+        </div>
 
-          Creating positioning, offers and marketing
-          strategies designed to attract the right
-          customers and generate qualified enquiries.
+
+        <p class="founder-copy">
+
+          Creating strategies, offers and campaigns
+          designed to generate qualified enquiries
+          and turn attention into customers.
 
         </p>
 
 
-        <span class="founder-tag">
-
-          STRATEGY · MARKETING · GROWTH
-
-        </span>
-
+        <div class="founder-line"></div>
 
       </article>
 
 
     </div>
 
-
   </div>
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      CASE STUDY
-========================================================= -->
+======================================================== -->
 
 <section
-  class="section section-dark"
+  class="section"
   id="case-study"
 >
 
@@ -3334,7 +2735,6 @@ footer {
 
 
     <div>
-
 
       <div class="case-tag">
         CASE STUDY
@@ -3344,7 +2744,6 @@ footer {
       <h2>
 
         Show the result.
-
         Not just the work.
 
       </h2>
@@ -3357,7 +2756,6 @@ footer {
         and websites.
 
       </p>
-
 
     </div>
 
@@ -3448,18 +2846,16 @@ footer {
 
       </div>
 
-
     </div>
-
 
   </div>
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      FINAL CTA
-========================================================= -->
+======================================================== -->
 
 <section
   class="cta"
@@ -3490,10 +2886,15 @@ footer {
     </p>
 
 
+    <!--
+      IMPORTANT:
+      Replace YOUR-EMAIL-HERE@example.com
+      with your real business email when ready.
+    -->
+
     <a
-      href="#contact"
+      href="mailto:YOUR-EMAIL-HERE@example.com"
       class="primary-btn"
-      id="bookingButton"
     >
 
       BOOK A FREE CALL
@@ -3504,20 +2905,6 @@ footer {
 
     </a>
 
-
-    <p
-      style="
-        margin-top:18px;
-        font-size:10px;
-        color:#555559;
-      "
-    >
-
-      Booking link coming soon.
-
-    </p>
-
-
   </div>
 
 </section>
@@ -3526,9 +2913,9 @@ footer {
 </main>
 
 
-<!-- =========================================================
+<!-- =======================================================
      FOOTER
-========================================================= -->
+======================================================== -->
 
 <footer>
 
@@ -3569,165 +2956,119 @@ footer {
 </footer>
 
 
-<!-- =========================================================
+<!-- =======================================================
      JAVASCRIPT
-========================================================= -->
+     MOBILE MENU
+======================================================== -->
 
 <script>
 
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const mobileMenuBtn =
-  document.getElementById(
-    "mobileMenuBtn"
-  );
+const mobileMenuButton =
+  document.getElementById("mobileMenuButton");
 
 const mobileNav =
-  document.getElementById(
-    "mobileNav"
-  );
-
-
-function openMobileMenu() {
-
-  mobileNav.classList.add("open");
-
-  document.body.classList.add("menu-open");
-
-  mobileMenuBtn.textContent = "×";
-
-  mobileMenuBtn.setAttribute(
-    "aria-label",
-    "Close menu"
-  );
-
-  mobileMenuBtn.setAttribute(
-    "aria-expanded",
-    "true"
-  );
-
-}
-
-
-function closeMobileMenu() {
-
-  mobileNav.classList.remove("open");
-
-  document.body.classList.remove("menu-open");
-
-  mobileMenuBtn.textContent = "☰";
-
-  mobileMenuBtn.setAttribute(
-    "aria-label",
-    "Open menu"
-  );
-
-  mobileMenuBtn.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-
-}
-
-
-mobileMenuBtn.addEventListener(
-  "click",
-  function(event) {
-
-    event.stopPropagation();
-
-    const isOpen =
-      mobileNav.classList.contains(
-        "open"
-      );
-
-    if (isOpen) {
-
-      closeMobileMenu();
-
-    } else {
-
-      openMobileMenu();
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   CLOSE MENU AFTER LINK CLICK
-========================================================= */
+  document.getElementById("mobileNav");
 
 const mobileLinks =
-  mobileNav.querySelectorAll(
-    "a"
+  mobileNav.querySelectorAll("a");
+
+
+function toggleMobileMenu() {
+
+  const isOpen =
+    mobileMenuButton.classList.toggle("active");
+
+  mobileNav.classList.toggle(
+    "active",
+    isOpen
   );
 
+  document.body.classList.toggle(
+    "menu-open",
+    isOpen
+  );
 
-mobileLinks.forEach(
-  function(link) {
+  mobileMenuButton.setAttribute(
+    "aria-expanded",
+    isOpen
+  );
 
-    link.addEventListener(
-      "click",
-      function() {
+  mobileMenuButton.setAttribute(
+    "aria-label",
+    isOpen
+      ? "Close navigation"
+      : "Open navigation"
+  );
+}
 
-        closeMobileMenu();
 
-      }
-    );
-
-  }
+mobileMenuButton.addEventListener(
+  "click",
+  toggleMobileMenu
 );
 
 
-/* =========================================================
-   CLOSE MENU WHEN CLICKING OUTSIDE
-========================================================= */
+mobileLinks.forEach(function(link) {
 
-document.addEventListener(
-  "click",
-  function(event) {
+  link.addEventListener(
+    "click",
+    function() {
 
-    const clickedMenu =
-      mobileNav.contains(
-        event.target
+      mobileMenuButton.classList.remove(
+        "active"
       );
 
-    const clickedButton =
-      mobileMenuBtn.contains(
-        event.target
+      mobileNav.classList.remove(
+        "active"
       );
 
-    if (
-      !clickedMenu &&
-      !clickedButton
-    ) {
+      document.body.classList.remove(
+        "menu-open"
+      );
 
-      closeMobileMenu();
+      mobileMenuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      mobileMenuButton.setAttribute(
+        "aria-label",
+        "Open navigation"
+      );
 
     }
+  );
 
-  }
-);
+});
 
 
-/* =========================================================
-   CLOSE MENU WITH ESCAPE
-========================================================= */
+/* Close menu with ESC */
 
 document.addEventListener(
   "keydown",
   function(event) {
 
     if (
-      event.key === "Escape"
+      event.key === "Escape" &&
+      mobileNav.classList.contains("active")
     ) {
 
-      closeMobileMenu();
+      mobileMenuButton.classList.remove(
+        "active"
+      );
+
+      mobileNav.classList.remove(
+        "active"
+      );
+
+      document.body.classList.remove(
+        "menu-open"
+      );
+
+      mobileMenuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
 
     }
 
@@ -3735,25 +3076,35 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   CLOSE MOBILE MENU WHEN SCREEN BECOMES DESKTOP
-========================================================= */
+/* Close menu if window becomes desktop */
 
 window.addEventListener(
   "resize",
   function() {
 
-    if (
-      window.innerWidth > 900
-    ) {
+    if (window.innerWidth > 900) {
 
-      closeMobileMenu();
+      mobileMenuButton.classList.remove(
+        "active"
+      );
+
+      mobileNav.classList.remove(
+        "active"
+      );
+
+      document.body.classList.remove(
+        "menu-open"
+      );
+
+      mobileMenuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
 
     }
 
   }
 );
-
 
 </script>
 
